@@ -1,28 +1,30 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state={
-      string: "Hello Tejas"
-    }
+    this.state = {
+      string: "Hello Tejas",
+    };
   }
+  changeText = () => {
+    this.setState({ string: "You clicked a button" });
+  };
   render() {
     return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h1>{this.state.string}</h1>
-        <button>click me</button>
-      </header>
-    </div>
-    )
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <h1>{this.state.string}</h1>
+          <button onClick={this.changeText}>click me</button>
+        </header>
+      </div>
+    );
   }
 }
 export default App;
