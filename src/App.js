@@ -6,7 +6,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      string: "Hello Tejas",
+      characters: [
+        { name: "Leonard", id: "1" },
+        { name: "Sheldon", id: "2" },
+        { name: "Howard", id: "3" },
+        { name: "Raj", id: "4" },
+        { name: "Bernadette", id: "5" },
+        { name: "Amy", id: "6" },
+        { name: "Penny", id: "7" },
+      ],
     };
   }
   changeText = () => {
@@ -15,14 +23,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <h1>{this.state.string}</h1>
-          <button onClick={this.changeText}>click me</button>
-        </header>
+        {this.state.characters.map((chars) => (
+          <h1 key={chars.id}>{chars.name}</h1>
+        ))}
       </div>
     );
   }
