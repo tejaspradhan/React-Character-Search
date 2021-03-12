@@ -23,6 +23,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>The Big Bang Theory Character Search</h1>
         {this.state.characters.map((chars) => (
           <h1 key={chars.id}>{chars.name}</h1>
         ))}
