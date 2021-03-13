@@ -6,6 +6,7 @@ class App extends Component {
     super();
     this.state = {
       characters: [],
+      searchField: "",
     };
   }
   changeText = () => {
@@ -17,10 +18,23 @@ class App extends Component {
       .then((users) => this.setState({ characters: users }));
   }
   render() {
+    const { characters, searchField } = this.state;
+    const filteredCharacters = characters.filter((character) =>
+      character.name.toLowerCase().includes(searchField.toLowerCase())
+    );
     return (
       <div className="App">
         <h1>Character Search Engine</h1>
-        <CardList characters={this.state.characters} />
+        <input
+          type="search"
+          placeholder="Find Characters"
+          name=""
+          id=""
+          onChange={(e) => {
+            this.setState({ searchField: e.target.value });
+          }}
+        />
+        <CardList characters={filteredCharacters} />
       </div>
     );
   }
