@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
@@ -7,19 +7,24 @@ class App extends Component {
     super();
     this.state = {
       characters: [
-        { name: "Leonard", id: "1" },
-        { name: "Sheldon", id: "2" },
-        { name: "Howard", id: "3" },
-        { name: "Raj", id: "4" },
-        { name: "Bernadette", id: "5" },
-        { name: "Amy", id: "6" },
-        { name: "Penny", id: "7" },
+        // { name: "Leonard", id: "1" },
+        // { name: "Sheldon", id: "2" },
+        // { name: "Howard", id: "3" },
+        // { name: "Raj", id: "4" },
+        // { name: "Bernadette", id: "5" },
+        // { name: "Amy", id: "6" },
+        // { name: "Penny", id: "7" },
       ],
     };
   }
   changeText = () => {
     this.setState({ string: "You clicked a button" });
   };
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) => this.setState({ characters: users }));
+  }
   render() {
     return (
       <div className="App">
