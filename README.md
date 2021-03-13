@@ -1,3 +1,9 @@
+# Project Description
+A simple React app with search functionality 
+Data fetched from : https://jsonplaceholder.typicode.com/users
+Images fetched from : https://robohash.org/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
