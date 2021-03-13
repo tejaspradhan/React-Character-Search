@@ -1,6 +1,9 @@
 # Project Description
+
 A simple React app with search functionality 
+
 Data fetched from : https://jsonplaceholder.typicode.com/users
+
 Images fetched from : https://robohash.org/
 
 
